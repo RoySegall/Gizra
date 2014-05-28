@@ -1,13 +1,11 @@
 ---
 title: Configure AngularJS apps in Travis CI
 tags: 
-  - yeoman.io
+  - yeoman
   - angularjs
-  - angular
   - javascript
-  - test
+  - karma
   - "travis-ci"
-  - examples
 permalink: "/content/configure-angularjs-travis-ci"
 layout: post
 author: CarlosMantilla
@@ -18,7 +16,7 @@ published: true
 
 On the road to the next release we always run the risk of obstacles leading to detours which can force improvisation and make us lose focus of the actual application. This makes tools continuous integration tools like [Travis CI](https://travis-ci.org/) fundamental to our work at Gizra.
 
-[AngularJS](https://angularjs.org/), in conjunction with [yeoman.io](http://yeoman.io/) and the powerful [AngularJS generator](https://github.com/yeoman/generator-angular) allows for quick integration with for automated testing with Karma, Grunt and Travis.
+[AngularJS](https://angularjs.org/), in conjunction with [yeoman.io](http://yeoman.io/)* and the powerful [AngularJS generator](https://github.com/yeoman/generator-angular) allows for quick integration with for automated testing with Karma, Grunt and Travis.
 
 <!-- more -->
 
@@ -49,17 +47,13 @@ $ yo angular:app application_name
 
 Adding the line `browsers: ['Firefox']` will make the test run with Firefox, which is compatible with travis ci. This means you need FF >= 17 installed locally for 'grunt test' to work.
 
-- Install Karma and its dependencies
-=== @carlos please add a link to Karma and explain what it is ===
+- Install [Karma](http://karma-runner.github.io)* and its [dependencies](http://karma-runner.github.io/0.12/intro/installation.html)
 
 ```bash
 $ npm install karma grunt-karma karma-jasmine karma-firefox-launcher --save-dev
 ```
 
-- Modify Travis CI configuration file to run Karma unit test files, you can open .travis.yml
-*Have to be in the root folder of the github repository.*
-=== @carlos - what does this mean? ===
-
+- Modify Travis CI configuration file .travis.yml, to add the configuration
 
 ```yaml
   language: node_js
@@ -75,6 +69,8 @@ $ npm install karma grunt-karma karma-jasmine karma-firefox-launcher --save-dev
     - 'npm install -g bower grunt-cli karma-cli'
     - 'bower install'
 ```
+*Note:* When you push you code to your repository in github, the .travis.yml have to be in the root of the repository, in this way travis-ci could use it..
+
 # Configure GitHub Webhook and Test.
 
 - Click the icon Settings
@@ -93,4 +89,8 @@ $ npm install karma grunt-karma karma-jasmine karma-firefox-launcher --save-dev
 
 ![]({{BASE_PATH}}/assets/images/posts/configure-angularjs-travis-ci/testing.png)
 
-From now on, every commit will run the tests and you will be notified if the new code broke the application.
+From now on, every commit will run the tests and you will be notified if the new code broke ;) the application.
+
+_* About:_
+- [Yeoman](http://yeoman.io/): suite of tools to improve the development workflow of web applications.
+- [Karma](http://karma-runner.github.io): is a javascript tool to build unit test with you favorite testing framework, created for the AngularJS optimized to AngularJS.
