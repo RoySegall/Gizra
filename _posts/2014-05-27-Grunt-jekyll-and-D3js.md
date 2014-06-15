@@ -56,7 +56,14 @@ so we back to the custom task in grunt, to fix the encoding of the files, prepar
 
 # Node map, D3js visualization
 
-...
+We select some [examples](https://github.com/mbostock/d3/wiki/Gallery) that help us to build, just practice to know how to worked with the d3js, this is similar to jquery about DOM manipulation.
+
+however the mobile performance could improve, was necessary to rethink beyond the examples and the API recommendation.
+
+If you work in a mobile application with d3js it's crucial use tools like [chrome devtools timeline](https://developer.chrome.com/devtools/docs/timeline) to keep for example the animations and interactions below 60fps.
+
+In an general way, the most problematics issues in performance are related handle events and animations.
+
 
 # Mobile Target, How to achieve the good performance?
 
@@ -66,8 +73,7 @@ Beside a responsive design of the templates, we follow good practice for mobile 
 
 Bottom line we remove the [300ms](http://updates.html5rocks.com/2013/12/300ms-tap-delay-gone-away) by double-tap zoom, we tke care about the target size in the node map as [Tim Park](https://www.youtube.com/watch?v=vzOy_ldZNXQ&feature=youtu.be&t=2m18s) recommend in his talk.
 
-And finally we add son [debounce](http://drupalmotion.com/article/debounce-and-throttle-visual-explanation) to deal with the multiple events trigger in the zoom event of d3js, acoording the devices like touch, mouseover, mouseout, and and we add
+And finally we add son [debounce](http://drupalmotion.com/article/debounce-and-throttle-visual-explanation) to deal with the multiple events trigger in the zoom event of d3js, according the devices like touch, mouseover, mouseout, and and we add
 
 
-https://www.youtube.com/watch?v=vzOy_ldZNXQ&list=PL37ZVnwpeshHQ1_r4DyrIqonICtMg3ol_&index=18
 
