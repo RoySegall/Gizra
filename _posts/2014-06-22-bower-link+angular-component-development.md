@@ -15,5 +15,11 @@ This is wonderful to production? but it's insane when we develop many components
 
 ---
 
+Bower Link
+
+`bower link` create a symbolic link of the component into the bower share folder, and then when we want to used into a project we only need to execute the command `bower link [library-name]`
+
+Let's test together...
+
 
 
