@@ -1,9 +1,9 @@
 ---
-title: "Bower link + Angular component development."
+title: "Bower link"
 tags: 
   - bower
   - angularjs
-permalink: "/content/bower-link+angular-component-development"
+permalink: "/content/bower-link"
 layout: post
 published: true
 ---
@@ -21,5 +21,18 @@ Bower Link
 
 Let's test together...
 
+We gonna to create a 'bower component' and  and 'application' to link the component and do the changes.
 
+- Create and access a folder for a new component.
 
+```bash
+mkdir component
+cd component
+```
+- Create the description of your component, with bower init and answer the questions according your component information.
+
+```bash
+bower init
+```
+
+![]({{BASE_PATH}}/assets/images/posts//bower-link.png)
