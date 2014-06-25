@@ -7,7 +7,7 @@ permalink: "/content/bower-link"
 layout: post
 published: true
 ---
-Bower is a super tool to manage the dependencies in our javascript applications.  if we want add a dependenciy only nees to use `bower install [dependencye-name]` and bower add the library file in the version compatible to may proyect.
+Bower is a super tool to manage the dependencies in our javascript applications.  if we want add a dependenciy only nees to use `bower install [dependency-name]` and bower add the library file in the version compatible to may proyect.
 
 This is wonderful to production? but it's insane when we develop many components simultaneous?
 
@@ -35,4 +35,16 @@ cd component
 bower init
 ```
 
-![]({{BASE_PATH}}/assets/images/posts//bower-link.png)
+![]({{BASE_PATH}}/assets/images/posts/bower-init.png)
+
+- Create the link of the component
+
+```bash
+bower link
+```
+![]({{BASE_PATH}}/assets/images/posts/bower-create-link.png)
+
+this create a symbolic link into the path `~/.local/share/bower/links/` to the component path.
+
+
+
