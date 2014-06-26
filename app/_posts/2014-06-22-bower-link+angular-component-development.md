@@ -19,23 +19,15 @@ Bower Link
 
 `bower link` create a symbolic link of the component into the bower share folder, and then when we want to used into a project we only need to execute the command `bower link [library-name]`
 
-Let's test together...
+Let's do it together...
 
-We gonna to create a 'bower component' and  and 'application' to link the component and do the changes.
+__Preparation__
 
-- Create and access a folder for a new component.
+Open a project witch one have a bower package declared (generally have the bower.json in the root of the project.) , also yo can create a new component and define his package with [`bower init`](http://bower.io/#defining-a-package)
 
-```bash
-mkdir component
-cd component
-```
-- Create the description of your component, with bower init and answer the questions according your component information.
+An easy way to do it this, is using the [yeoman generators](http://yeoman.io/generators/community.html).
 
-```bash
-bower init
-```
-
-![]({{BASE_PATH}}/assets/images/posts/bower-init.png)
+__Linkinhg__
 
 - Create the link of the component
 
@@ -46,5 +38,13 @@ bower link
 
 this create a symbolic link into the path `~/.local/share/bower/links/` to the component path.
 
+- Access the project folder where you want to use the component. and link the component
 
+```bash
+bower link myComponentName
+```
+
+this create a symbolic link into bower components folder of the project to the symbolic link of the component created, in the links folder.
+
+__Conclusion__
 
