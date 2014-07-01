@@ -7,11 +7,11 @@ permalink: "/content/bower-link"
 layout: post
 published: true
 ---
-Bower is a super tool to manage the dependencies in our javascript applications.  if we want add a library only need to use `bower install [library-name]` and bower add the file's library in the version compatible with my project.
+Bower is a super tool to manage the dependencies in our javascript applications.  if we want add a library only need to use `bower install [library-name]` and this add the file's library in the version compatible with other libraries of my project.
 
-also, if the library have a new version we can update this one, only using `bower update`.
+also, if the library have a new version we can update this and his dependencies, only using `bower update`.
 
-This is wonderful to production? but repeat this every time a library under development change it's insane, also it's wrost when we have this situation with many components simultaneous
+This is wonderful for a production enviroment? but repeat this every time a library changes under development it's insane, even worse at the situation with many components developing simultaneously.
 
 <!-- more -->
 
@@ -19,15 +19,15 @@ This is wonderful to production? but repeat this every time a library under deve
 
 Bower Link
 
-`bower link` create a symbolic link of the component into the bower share folder, and when we want to used into a project we only need to execute the command `bower link [library-name]`
+`bower link` create a symbolic link of the component into the bower's share folder, and we can use this into our project executing the command `bower link [library-name]`
 
-Let's try it together...
+Let's try it together... linking a library into a project.
 
 __Preparation__
 
-We need to use a project which already have a bower package declared (*), or you can create/define a new component/application with [`bower init`](http://bower.io/#defining-a-package)
+Both the library and the application have to be bower packages(*), for more information of [bower packages](https://github.com/bower/bower.json-spec) and how to you [create one](http://bower.io/docs/creating-packages/) yo can check [bower site](http://bower.io/).
 
-An easy way to do it this, is using the [yeoman generators](http://yeoman.io/generators/community.html).
+To create from the scratch, we suggest to use [yeoman generators](http://yeoman.io/generators/community.html).
 
 1.- Create new application folder.
 
@@ -37,11 +37,12 @@ $ mkdir newApp
 $ cd newApp
 ```
 
-2.- Create new application (for example angular application)
+2.- Create new application. [(You could found and example here)](http://yeoman.io/codelab/scaffold-app.html)
 
 ```bash
 $ yo angular
 ```
+
 You need to have an example [here](http://yeoman.io/codelab/install-generators.html) before yo need to [install yeoman](http://yeoman.io/codelab/install-generators.html).
 
 3.- Create a component folder.
@@ -83,6 +84,6 @@ __Use__
 Now, any change you do in the folder
 
 
-(*): You could check if have the bower.json file.
+(*): You could check if have the bower.json file with the packaged information.
 (**): Generally, where the bower.json file there is..
 
