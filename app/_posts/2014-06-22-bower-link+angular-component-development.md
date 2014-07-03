@@ -25,7 +25,7 @@ Let's try it together... linking a library into a project.
 
 __Preparation__
 
-Both the library and the application have to be bower packages(*), for more information of [bower packages](https://github.com/bower/bower.json-spec) and how to you [create one](http://bower.io/docs/creating-packages/) yo can check [bower site](http://bower.io/).
+Check that both the library and the application have to be bower packages(*), for more information of [bower packages](https://github.com/bower/bower.json-spec) and how to you [create one](http://bower.io/docs/creating-packages/) yo can check [bower site](http://bower.io/).
 
 To create from the scratch, we suggest to use [yeoman generators](http://yeoman.io/generators/community.html).
 
@@ -33,7 +33,6 @@ To create from the scratch, we suggest to use [yeoman generators](http://yeoman.
 
 ```bash
 $ mkdir newApp
-
 $ cd newApp
 ```
 
@@ -53,35 +52,39 @@ $ mkdir myLibrary
 $ cd myLibrary
 ```
 
-4.- Create a component.
+4.- Create a new component, you can use `bower init` to declare the new application.
 
 ```bash
-$
+$ bower init
+```
+
+5. Add a library javascript
+```javascript
+function greeter() {
+  return 'Hello world';
+}
 ```
 
 __Linking__
 
-1.- Open the root folder of the component. (**)
-2.- Create a link.
+1.- Create a link, at the root folder of the component. (**).
 
 ```bash
-bower link
+$ bower link
 ```
-![]({{BASE_PATH}}/assets/images/posts/bower-create-link.png)
-
 this create a symbolic link into the path `~/.local/share/bower/links/` to the component path.
 
-3.- Access the project folder where you want to use the component. and link the dependency.
+2.- Access the project folder where you want to use the component. and link the dependency.
 
 ```bash
-bower link myComponentName
+$ bower link myLibrary
 ```
 
-this create a symbolic link into project bower components folder to the symbolic link created, in the bower links folder.
+this create a symbolic link into bower components folder of the project, to the symbolic link created before.
 
 __Use__
 
-Now, any change you do in the folder
+Now, any change you into the library file, inside of your project if updated in the original file of the library.
 
 
 (*): You could check if have the bower.json file with the packaged information.
