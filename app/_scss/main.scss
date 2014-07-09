@@ -1023,7 +1023,7 @@ header {
 #contact {
   background: url('/images/hompage/contact/map.jpg') no-repeat;
   background-position: center top;
-  height: 521px;
+  height: 470px;
   background-size: cover;
   position: relative;
 
@@ -1043,7 +1043,7 @@ header {
     max-width: 580px;
     padding-left: 30px;
     padding-right: 30px;
-    padding-top: 94px;
+    padding-top: 70px;
     margin: 0 auto;
   }
 
@@ -1059,58 +1059,14 @@ header {
     text-align: center;
     color: $gizra-black;
 
-    a {
-      color: $gizra-black;
-    }
-  }
+    div {
+      padding: 10px 0;
 
-  form {
-
-    .text-field,
-    .text-area {
-      width: 100%;
-      display: block;
-      border: none;
-      border-bottom: 1px solid $gizra-black;
-      background-color: transparent;
-      color: black;
-
-      &::-webkit-input-placeholder {
+      a {
         color: $gizra-black;
-        font-style: italic;
-      }
-
-      &:-moz-placeholder { /* Firefox 18- */
-        color: $gizra-black;
-        font-style: italic;
-      }
-
-      &::-moz-placeholder {  /* Firefox 19+ */
-        color: $gizra-black;
-        font-style: italic;
-      }
-
-      &:-ms-input-placeholder {
-        color: $gizra-black;
-        font-style: italic;
       }
     }
 
-    .text-area {
-      resize: none;
-    }
-
-    .btn-primary {
-      border-radius: 0;
-      float: right;
-      background-color: $gizra-black;
-      color: #DBB68A;
-      border: none;
-      font-family: OstrichSansMedium;
-      font-size: 32px;
-      line-height: 32px;
-      padding: 5px 25px;
-    }
   }
 }
 

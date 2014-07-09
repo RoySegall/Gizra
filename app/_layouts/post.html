@@ -32,21 +32,21 @@ layout: default
     <div class="container">
       <div class="row">
 
-        <div class="col-md-12 post">
+        <div class="col-md-8 col-md-offset-2 post">
           <div class="row">
-            <div class="post-label col-xs-12">
+            <div class="post-label">
               <a href="{{ page.url }}">{{ page.title }}</a>
             </div>
           </div>
 
           <div class="row small-row">
-            <div class="date col-md-3 col-sm-3 col-xs-4">{{ page.date | date_to_string }}</div>
-            <div class="seprator col-md-1 col-sm-1 col-xs-1">|</div>
-            <div class="author col-md-8 col-sm-7 col-xs-6">By {{ author.name }}</div>
+            <div class="date">{{ page.date | date_to_string }}</div>
+            <div class="seprator">|</div>
+            <div class="author">By {{ author.name }}</div>
           </div>
 
           <div class="row small-row">
-            <div class="tags col-sm-9">
+            <div class="tags">
 
               {% unless page.tags == empty %}
               <ul class="inline">
@@ -56,21 +56,21 @@ layout: default
               {% endunless %}
             </div>
 
-            <div class="comments-count col-sm-3"><a href="http://www.gizra.com{{page.url}}#disqus_thread"></a></div>
+            <div class="comments-count"><a href="http://www.gizra.com{{page.url}}#disqus_thread"></a></div>
           </div>
 
           <div class="row">
-            <div class="col-xs-12 post-content">
+            <div class="post-content">
               {{ content }}
             </div>
           </div>
 
           <div class="row">
-            <div class="col-xs-12 bottom-dash"></div>
+            <div class="bottom-dash"></div>
           </div>
 
           <div class="row post-nav">
-            <div class="col-xs-6">
+            <div class="first">
               {% if page.previous %}
               <div class="previous">
                 <a href="{{ page.previous.url }}">
@@ -82,7 +82,7 @@ layout: default
               </a>
               {% endif %}
             </div>
-            <div class="col-xs-6">
+            <div class="last">
               {% if page.next %}
               <div class="next">
                 <a href="{{ page.next.url }}">
@@ -97,10 +97,10 @@ layout: default
           </div>
 
           <div class="row author-details">
-            <div class="col-md-1 image-wrapper">
+            <div class="image-wrapper">
               <img src="/images/team/{{ author.twitter }}.jpg" class="img-responsive">
             </div>
-            <div class="col-md-11 text-wrapper">
+            <div class="text-wrapper">
               <span class="name">{{ author.name }}</span> <span class="twitter">(@{{ author.twitter }})</span>
               <div class="title">{{ author.title }}</div>
               <div class="bio">{{ author.bio }}</div>
@@ -108,7 +108,7 @@ layout: default
           </div>
 
           <div class="row">
-            <div class="col-xs-12 bottom-dash-small"></div>
+            <div class="bottom-dash-small"></div>
           </div>
 
           <div class="row">

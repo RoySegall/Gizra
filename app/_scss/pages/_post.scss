@@ -146,7 +146,13 @@
         }
       }
 
-      .comments-count, .tags {
+      .seprator {
+        margin-right: 15px;
+        margin-left: 15px;
+      }
+
+      .comments-count,
+      .tags {
         margin: 20px 0;
         color: #4883B4;
         font-weight: bold;
@@ -154,12 +160,16 @@
         padding-top: 2px;
       }
 
+      .tags {
+        float: left;
+      }
+
       .comments-count {
         background: url("/images/post/small-comment.jpg") 15px 0 no-repeat;
       }
 
       .tags {
-        background: url("/images/post/small-tags.jpg") 12px 0 no-repeat;
+        background: url("/images/post/small-tags.jpg") 0 0 no-repeat;
 
         ul {
           display: inline;
@@ -187,6 +197,20 @@
 
   .post-content {
     color: $gizra-text;
+
+    li,
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 100%;
+    }
   }
 
   .bottom-dash {
@@ -201,6 +225,12 @@
 
   .post-nav {
     margin-bottom: 30px;
+
+    .first,
+    .last {
+      width: 50%;
+      float: left;
+    }
 
     .previous,
     .next {
@@ -221,7 +251,7 @@
 
     .previous {
       float: left;
-      background:  url("/images/post/prev.png") 5px 18px no-repeat $gizra-orange;
+      background: url("/images/post/prev.png") 5px 18px no-repeat $gizra-orange;
 
       a {
         padding: 6px 10px 6px 30px;
@@ -230,7 +260,7 @@
 
     .next {
       float: right;
-      background:  url("/images/post/next.png") 95% 18px no-repeat $gizra-orange;
+      background: url("/images/post/next.png") 95% 18px no-repeat $gizra-orange;
 
       a {
         padding: 6px 30px 6px 10px;
@@ -255,6 +285,8 @@
     margin-bottom: 30px;
 
     .image-wrapper {
+      float: left;
+      margin-right: 20px;
 
       img {
         width: 80px;
