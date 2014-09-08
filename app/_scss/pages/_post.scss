@@ -1,0 +1,303 @@
+// Post Page
+#post-page,
+#blog-page {
+  position: relative;
+  overflow-x: hidden;
+  background: white;
+  margin-top: -20px;
+
+  a {
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &:before {
+    content: ' ';
+    display: block;
+    background-color: white;
+    height: 200px;
+    top: -165px;
+    left: -100px;
+    right: -100px;
+    position: absolute;
+    @include rotate(2deg);
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .background {
+    margin-bottom: 121px;
+
+    @media (max-width: 550px) {
+      margin-bottom: 45px;
+    }
+
+    img {
+      max-height: 300px;
+      width: 100%;
+    }
+  }
+
+  .ballons {
+    position: absolute;
+    top: 38px;
+    left: 50%;
+    margin-left: -12%;
+    text-align: center;
+    background: url('/images/hompage/blog/ballons.png') no-repeat 0 100px;
+    height: 350px;
+    width: 400px;
+    padding-top: 210px;
+    overflow: hidden;
+
+    @media (min-width: 769px) and (max-width: 1240px) {
+      left: 60%;
+      height: 215px;
+      background-position: 0 0;
+    }
+
+    @media (min-width: 550px) and (max-width: 768px) {
+      left: 60%;
+      height: 215px;
+      background-position: 0 0;
+    }
+
+    @media (max-width: 550px) {
+      display: none;
+    }
+  }
+
+  .post-back {
+    position: absolute;
+    top: 250px;
+    left: 20%;
+    text-align: center;
+
+    @media (min-width: 769px) and (max-width: 1240px) {
+      top: 140px;
+      left: 10%;
+    }
+
+    @media (min-width: 550px) and (max-width: 768px) {
+      top: 105px;
+      left: 10%;
+    }
+
+    @media (max-width: 550px) {
+      top: 45px;
+      left: 5%;
+    }
+  }
+
+  .content {
+
+    .date,
+    .post-label,
+    .author,
+    .seprator,
+    .previous,
+    .next {
+      font-family: OstrichSansMedium;
+    }
+
+    .post-label {
+      @include post-label();
+    }
+
+    .small-row {
+      width: 60%;
+
+      @media (min-width: 991px) and (max-width: 1240px) {
+        width: 75%;
+      }
+      @media (min-width: 769px) and (max-width: 990px) {
+        width: 80%;
+      }
+      @media (min-width: 550px) and (max-width: 768px) {
+        width: 85%;
+      }
+      @media (max-width: 550px) {
+        width: 100%;
+      }
+
+      .date,
+      .author,
+      .seprator {
+        color: #9D9D9D;
+        font-size: 38px;
+        float: left;
+
+        @media (min-width: 769px) and (max-width: 990px) {
+          font-size: 30px;
+        }
+        @media (min-width: 550px) and (max-width: 768px) {
+          font-size: 25px;
+        }
+        @media (max-width: 550px) {
+          font-size: 20px;
+        }
+
+        a {
+          color: #9D9D9D;
+        }
+      }
+
+      .seprator {
+        margin-right: 15px;
+        margin-left: 15px;
+      }
+
+      .comments-count,
+      .tags {
+        margin: 20px 0;
+        color: #4883B4;
+        font-weight: bold;
+        padding-left: 35px;
+        padding-top: 2px;
+      }
+
+      .tags {
+        float: left;
+      }
+
+      .comments-count {
+        background: url("/images/post/small-comment.jpg") 15px 0 no-repeat;
+      }
+
+      .tags {
+        background: url("/images/post/small-tags.jpg") 0 0 no-repeat;
+
+        ul {
+          display: inline;
+
+          li {
+            list-style: none;
+            float: left;
+            margin-left: 5px;
+
+            &:after {
+              content: ',';
+            }
+
+            &:last-child {
+
+              &:after {
+                content: '';
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .post-content {
+    color: $gizra-text;
+
+    li,
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .bottom-dash {
+    border-bottom: 4px dashed $gizra-text;
+    margin: 30px 0;
+  }
+
+  .bottom-dash-small {
+    border-bottom: 2px dashed #838383;
+    margin: 30px 0;
+  }
+
+  .post-nav {
+    margin-bottom: 30px;
+
+    .first,
+    .last {
+      width: 50%;
+      float: left;
+    }
+
+    .previous,
+    .next {
+
+      &:hover {
+        background-color: $gizra-orange-dark;
+      }
+
+      a {
+        color: #ffffff;
+        font-size: 35px;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .previous {
+      float: left;
+      background: url("/images/post/prev.png") 5px 18px no-repeat $gizra-orange;
+
+      a {
+        padding: 6px 10px 6px 30px;
+      }
+    }
+
+    .next {
+      float: right;
+      background: url("/images/post/next.png") 95% 18px no-repeat $gizra-orange;
+
+      a {
+        padding: 6px 30px 6px 10px;
+      }
+    }
+
+    .prev-text,
+    .next-text {
+      color: $gizra-orange;
+      width: 100%;
+      float: left;
+      font-weight: bold;
+    }
+
+    .next-text {
+      text-align: right;
+      float: right;
+    }
+  }
+
+  .author-details {
+    margin-bottom: 30px;
+
+    .image-wrapper {
+      float: left;
+      margin-right: 20px;
+
+      img {
+        width: 80px;
+        height: 80px;
+        max-width: none;
+      }
+    }
+
+    .text-wrapper {
+      padding-left: 30px;
+      color: $gizra-text;
+    }
+  }
+}

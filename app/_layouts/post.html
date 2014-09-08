@@ -1,0 +1,124 @@
+---
+layout: default
+---
+
+{% if page.author == null %}
+  {% assign author = "Amitaibu" %}
+{% else %}
+  {% assign author = page.author %}
+{% endif %}
+
+{% for authors in site.authors %}
+  {% for author_info in authors %}
+    {% if author_info[0] == author %}
+      {% assign author = author_info[1] %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+<section id="post-page">
+  <div class="background">
+    <img src="/images/post/background.png">
+  </div>
+
+  <div class="ballons"></div>
+  <div class="post-back">
+    <a href="/blog">
+      <img src="/images/post/post-back.png">
+    </a>
+  </div>
+
+  <div class="content">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-8 col-md-offset-2 post">
+          <div class="row">
+            <div class="post-label">
+              <a href="{{ page.url }}">{{ page.title }}</a>
+            </div>
+          </div>
+
+          <div class="row small-row">
+            <div class="date">{{ page.date | date_to_string }}</div>
+            <div class="seprator">|</div>
+            <div class="author">By {{ author.name }}</div>
+          </div>
+
+          <div class="row small-row">
+            <div class="tags">
+
+              {% unless page.tags == empty %}
+              <ul class="inline">
+                {% assign tags_list = page.tags %}
+                {% include tags_list.html %}
+              </ul>
+              {% endunless %}
+            </div>
+
+            <div class="comments-count"><a href="http://www.gizra.com{{page.url}}#disqus_thread"></a></div>
+          </div>
+
+          <div class="row">
+            <div class="post-content">
+              {{ content }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="bottom-dash"></div>
+          </div>
+
+          <div class="row post-nav">
+            <div class="first">
+              {% if page.previous %}
+              <div class="previous">
+                <a href="{{ page.previous.url }}">
+                  Previous
+                </a>
+              </div>
+              <a href="{{ page.previous.url }}" class="prev-text">
+                {{ page.previous.title }}
+              </a>
+              {% endif %}
+            </div>
+            <div class="last">
+              {% if page.next %}
+              <div class="next">
+                <a href="{{ page.next.url }}">
+                  Next
+                </a>
+              </div>
+              <a href="{{ page.next.url }}" class="next-text">
+                {{ page.next.title }}
+              </a>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="row author-details">
+            <div class="image-wrapper">
+              <img src="/images/team/{{ author.twitter }}.jpg" class="img-responsive">
+            </div>
+            <div class="text-wrapper">
+              <span class="name">{{ author.name }}</span> <span class="twitter">(@{{ author.twitter }})</span>
+              <div class="title">{{ author.title }}</div>
+              <div class="bio">{{ author.bio }}</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="bottom-dash-small"></div>
+          </div>
+
+          <div class="row">
+            {% include disqus.html %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include comments_count.html %}

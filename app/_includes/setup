@@ -1,0 +1,5 @@
+{% if site.custom.BASE_PATH and site.custom.BASE_PATH != '' %}
+  {% assign BASE_PATH = site.custom.BASE_PATH %}
+{% else %}
+  {% assign BASE_PATH = nil %}
+{% endif %}

@@ -1,0 +1,30 @@
+@mixin post-label() {
+
+  a {
+    font-size: 70px;
+    line-height: 70px;
+    color: #9A2B2C;
+
+    @media (min-width: 991px) {
+      font-size: 65px;
+      line-height: 65px;
+    }
+    @media (min-width: 769px) and (max-width: 990px) {
+      font-size: 60px;
+      line-height: 60px;
+    }
+    @media (min-width: 550px) and (max-width: 768px) {
+      font-size: 55px;
+      line-height: 55px;
+    }
+    @media (max-width: 550px) {
+      font-size: 45px;
+      line-height: 45px;
+    }
+
+    &:hover {
+      color: $gizra-blue;
+      text-decoration: none;
+    }
+  }
+}

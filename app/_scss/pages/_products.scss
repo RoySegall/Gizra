@@ -1,0 +1,181 @@
+// Products Page
+#products-page {
+  position: relative;
+  overflow-x: hidden;
+  margin-top: -20px;
+
+  a {
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &:before {
+    content: ' ';
+    display: block;
+    background-color: white;
+    height: 200px;
+    top: -165px;
+    left: -100px;
+    right: -100px;
+    position: absolute;
+    @include rotate(2deg);
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .background {
+    margin-bottom: 121px;
+
+    @media (max-width: 550px) {
+      margin-bottom: 45px;
+    }
+
+    img {
+      max-height: 300px;
+      width: 100%;
+    }
+  }
+
+  .container-background {
+    position: relative;
+
+    &:before {
+      content: ' ';
+      display: block;
+      background-color: #E9E9E9;
+      height: 600px;
+      top: 300px;
+      left: -100px;
+      right: -100px;
+      position: absolute;
+      @include rotate(6deg);
+    }
+
+    &:after {
+      content: ' ';
+      display: block;
+      background-color: #E9E9E9;
+      height: 600px;
+      top: 670px;
+      left: -100px;
+      right: -100px;
+      position: absolute;
+      @include rotate(-6deg);
+    }
+  }
+
+  .title {
+    position: absolute;
+    top: 30px;
+    left: 20%;
+    text-align: center;
+    height: 235px;
+    width: 60%;
+    overflow: hidden;
+    color: white;
+
+    @media (max-width: 769px) {
+      top: 20px;
+    }
+
+    @media (min-width: 550px) and (max-width: 768px) {
+      top: 15px;
+    }
+
+    @media (max-width: 550px) {
+      top: 0;
+    }
+
+    h2 {
+      font-family: OstrichSansMedium;
+      font-size: 81px;
+      line-height: 57px;
+
+      @media (max-width: 769px) {
+        font-size: 45px;
+        margin-top: 0;
+      }
+    }
+  }
+
+    .container {
+
+    .product-name,
+    .view-wrapper a {
+      font-family: OstrichSansMedium;
+    }
+
+    .product {
+      margin-bottom: 200px;
+
+      @media (max-width: 768px) {
+        margin-bottom: 100px;
+      }
+
+      &.last {
+        margin-bottom: 100px;
+
+        @media (max-width: 768px) {
+          margin-bottom: 50px;
+        }
+      }
+
+      .product-name {
+        padding-top: 50px;
+        font-size: 40px;
+        font-weight: bold;
+        letter-spacing: 1px;
+
+        @media (min-width: 768px) and (max-width: 1240px) {
+          margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 25px;
+        }
+
+        &.openscholar {
+          background:  url("/images/products/openscholar-icon.png") 0 0 no-repeat;
+        }
+
+        &.garment {
+          background:  url("/images/products/garment-icon.png") 0 0 no-repeat;
+        }
+
+        &.zariz {
+          background:  url("/images/products/zariz-icon.png") 0 0 no-repeat;
+        }
+      }
+
+      .product-icon {
+        margin: 20px 0 30px;
+      }
+
+      .view-wrapper {
+        float: left;
+        background-color: black;
+
+        a {
+          color: white;
+          font-size: 30px;
+          letter-spacing: 2px;
+          padding: 0 20px;
+
+          &:hover,
+          &:active {
+            color: white;
+            text-decoration: none;
+          }
+        }
+
+        &:hover {
+          background-color: $gizra-orange-hover;
+        }
+      }
+    }
+  }
+}

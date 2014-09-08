@@ -1,0 +1,17 @@
+# Jekyll configuration precedence:
+# 1. Gruntfile task
+# 2. config.build.yml
+# 3. config.yml
+
+future: false
+show_drafts: false
+
+production_url : www.gizra.com
+disqus :
+  short_name : gizra
+
+custom:
+  BASE_PATH: http://www.gizra.com
+
+google:
+  tracking_id: 'UA-6558346-3'

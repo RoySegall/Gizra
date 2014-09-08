@@ -1,0 +1,172 @@
+#team-page {
+  position: relative;
+  overflow-x: hidden;
+  margin-top: -20px;
+
+  a {
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &:before {
+    content: ' ';
+    display: block;
+    background-color: white;
+    height: 200px;
+    top: -165px;
+    left: -100px;
+    right: -100px;
+    position: absolute;
+    @include rotate(2deg);
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .background {
+    margin-bottom: 2px;
+
+    img {
+      max-height: 300px;
+      width: 100%;
+    }
+  }
+
+  .title {
+    position: absolute;
+    top: 30px;
+    left: 20%;
+    text-align: center;
+    height: 235px;
+    width: 60%;
+    overflow: hidden;
+    color: white;
+
+    @media (max-width: 769px) {
+      top: 20px;
+    }
+
+    @media (min-width: 550px) and (max-width: 768px) {
+      top: 15px;
+    }
+
+    @media (max-width: 550px) {
+      top: 0;
+    }
+
+    h2 {
+      font-family: OstrichSansMedium;
+      font-size: 81px;
+      line-height: 57px;
+
+      @media (max-width: 769px) {
+        font-size: 45px;
+        margin-top: 0;
+      }
+    }
+
+    .description {
+      text-align: center;
+      font-size: 14px;
+      line-height: 20px;
+      margin-top: 25px;
+    }
+  }
+
+  .container {
+    max-width: 1000px;
+    margin-bottom: 50px;
+
+    .row {
+
+      div {
+        padding: 0;
+        position: relative;
+      }
+    }
+
+    .member-details {
+      margin: 10px -15px 30px -15px;
+
+      .member-name-big {
+        font-family: OstrichSansMedium;
+        font-size: 65px;
+        line-height: 50px;
+        color: #426C46;
+        margin-bottom: 10px;
+      }
+
+      .role {
+        font-family: OstrichSansMedium;
+        font-size: 35px;
+        line-height: 30px;
+        color: black;
+      }
+
+      .social {
+        width: 100%;
+        margin-bottom: 10px;
+        float: left;
+
+        a {
+          float: left;
+          margin-right: 20px;
+        }
+      }
+    }
+
+    .team-head {
+      margin-bottom: 2px;
+
+      div {
+        max-width: 333px;
+
+        .member-name {
+          font-family: OstrichSansMedium;
+          font-size: 55px;
+          line-height: 55px;
+          color: white;
+          width: 40%;
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          text-shadow: 1px 1px 1px $gizra-black;
+        }
+      }
+    }
+
+    .team {
+
+      div {
+        max-width: 249px;
+
+        .member-name {
+          font-family: OstrichSansMedium;
+          font-size: 35px;
+          line-height: 35px;
+          color: white;
+          width: 40%;
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          text-shadow: 1px 1px 1px $gizra-black;
+
+          @media (min-width: 769px) {
+
+          }
+
+          @media (min-width: 550px) and (max-width: 768px) {
+
+          }
+
+          @media (max-width: 550px) {
+
+          }
+        }
+      }
+    }
+  }
+}

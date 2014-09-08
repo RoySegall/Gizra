@@ -1,0 +1,9 @@
+{
+  "name": "Gizra.com",
+  "version": "0.0.0",
+  "dependencies": {
+    "parallax": "~1.0.0",
+    "jquery": "~1.10.2",
+    "bootstrap-sass-official": "~3.1.1"
+  }
+}
