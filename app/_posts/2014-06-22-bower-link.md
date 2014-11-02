@@ -92,3 +92,28 @@ Inside the bower components folder of your project, you could update in the orig
 
 (*): You could check if have the bower.json file with the packaged information.
 
+__Ready for production__
+
+In our project with Drupal we can install the client application and depedencies, with a bash script file 
+``install.sh``, to add into a common place into the Drupal project, to achive it
+
+we need to define the url into the Bower configuration file ``.bowerrc``
+
+```json
+{
+  "directory": "[profile_name]/libraries/bower_components/"
+}
+```
+
+and in the script file we could add that always do a clean installation, every time we ron the inatallation script.
+
+```bash
+# Install angular components via bower.
+bower uninstall [application_name]
+bower cache clean
+bower install [url_application_repository]
+```
+
+this run the installation of the application and dependencies defined into the ``bower.json`` file.
+
+Also, to know more you can check [bower configuration](http://bower.io/docs/config/) 
