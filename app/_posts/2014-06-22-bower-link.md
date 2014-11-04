@@ -94,10 +94,10 @@ Inside the bower components folder of your project, you could update in the orig
 
 __Ready for production__
 
-In our project with Drupal we can install the client application and depedencies, with a bash script file 
-``install.sh``, to add into a common place into the Drupal project, to achive it
+In our Drupal's projects in Gizra, we can install the client application and dependencies, with a bash script file 
+``install.sh``, to achive it
 
-we need to define the url into the Bower configuration file ``.bowerrc``
+Also, in the root of the project, we need to define the path where we wants to be storage the libraries files, in the Bower configuration file ``.bowerrc``
 
 ```json
 {
@@ -105,7 +105,7 @@ we need to define the url into the Bower configuration file ``.bowerrc``
 }
 ```
 
-and in the script file we could add that always do a clean installation, every time we ron the inatallation script.
+and in the script file we could add instructions fo clean the enviroment, and perform a fresh installation, every time we run the script.
 
 ```bash
 # Install angular components via bower.
@@ -114,6 +114,6 @@ bower cache clean
 bower install [url_application_repository]
 ```
 
-this run the installation of the application and dependencies defined into the ``bower.json`` file.
+So, Bower will install the dependencies defined into the ``bower.json`` file.
 
-Also, to know more you can check [bower configuration](http://bower.io/docs/config/) 
+For more informaion, please check [bower configuration](http://bower.io/docs/config/) 
