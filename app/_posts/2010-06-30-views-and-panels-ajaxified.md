@@ -11,7 +11,7 @@ layout: post
 If you haven't read Roger Lopez <a href="http://zroger.com/node/30">Ajax without Javascript</a> take a 5 minutes break and do it. If you are not a developer and all this code makes you frightened then you are excused. This post will also have a little code, but take a big breath and you'll see how easy it is to Ajaxify your Panels!
 
 <ol>
-<li>Download this <a href="/assets/images/legacy/story_list_0.zip">feature</a> and the related modules <code>drush dl ctools panels views && drush en page_manager panels views_content views_ui story_list php -y</code></li>
+<li>Download this <a href="https://drive.google.com/file/d/0B943t2AqZZxCNEFzcHhpRGFUWGM/edit?usp=sharing">feature</a> and the related modules <code>drush dl ctools panels views && drush en page_manager panels views_content views_ui story_list php -y</code></li>
 <li>Add a few story nodes (title and body), or use Devel generate module to do it for you</li>
 <li>Navigate to <code>/story-list</code> and you should see a list of the last 10 stories on the left and the body of the first story on the right</li>
 <li>Click on any of the titles and notice how the body text changes, without any page load. Hooray!</li>
