@@ -94,4 +94,11 @@ Would be translated to
 
 ## Testing JS
 
+@juampy from Lullabot is recommending in his [blog post](https://www.lullabot.com/blog/article/testing-front-end-casperjs) to use CasperJs to test JS, and I'd like to explain why I think Behat would be better.
+
+Casper is made for developers, written by developers, and read by developers.
+Behat is the same, only it MAY be read by your client as-well.
+
+No (typical) client will
+
 <img src="/assets/images/posts/restful-discovery/image1.jpg" />
