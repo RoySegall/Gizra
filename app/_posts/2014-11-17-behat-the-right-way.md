@@ -15,7 +15,7 @@ published: true
 
 If you don't have a test on your project, I would argue that your are doing it wrong. (See my [The Gizra Way](https://www.getpantheon.com/blog/drupal-development-gizra-way) presentation where I explain why). Even having a _single_ test would be much better than none.
 
-With that said, it's super easy to abuse Behat. We are developers and we are thinking similar to machines (not really, but you get my point). If I would like to test login to my site I could easily do
+With that said, it's super easy to abuse Behat. We are developers and we are thinking similar to machines (not really, but you get my point). If you would like to test login to your site you could easily do
 
 ```cucumber
 Given I visit "/user/login"
@@ -44,6 +44,8 @@ Meta steps are a great way to help you write your step definition (i.e. each lin
 Given a group "Public Group 1" with "Public" access is created with group manager "group1-admin"
 ```
 
+Would be defined as:
+
 ```php
 <?php
 
@@ -61,7 +63,7 @@ public function aGroupWithAccessIsCreatedWithGroupManager($title, $access, $user
 
   // Set the title and body fields.
   $steps[] = new Step\When('I fill in "title" with "' . $title . '"');
-  $steps[] = new Step\When('I fill in "edit-body-und-0-summary" with "This is default summary."');
+  $steps[] = new Step\When('I fill in "edit-body-und-0-summary" with "Some text"');
 
   // ... Do any logic needed.
 
@@ -97,6 +99,7 @@ public function iVisitNodePageOfType($title, $type) {
     );
     throw new Exception(format_string("Node @title of @type not found.", $params));
   }
+
   $nid = key($result['node']);
   // Use Drupal Context 'I am at'.
   return new Given("I go to \"node/$nid\"");
