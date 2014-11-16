@@ -41,31 +41,33 @@ As you see we are avoiding writing _scripted_ tests, and try to describe what sh
 Meta steps are a great way to help you write your step definition (i.e. each line that is translated to code) with reusable code. So for example
 
 ```cucumber
-Given a group "Public Group 1" with "Public" access is created with group manager "group1-admin"``
+Given a group "Public Group 1" with "Public" access is created with group manager "group1-admin"
 ```
 
 ```php
-  /**
-   * @Given /^a group "([^"]*)" with "([^"]*)" access is created with group manager "([^"]*)"$/
-   */
-  public function aGroupWithAccessIsCreatedWithGroupManager($title, $access, $username, $domains = NULL, $moderated = FALSE, $organizations = array()) {
-    // Generate URL from title.
-    $url = strtolower(str_replace(' ', '-', trim($title)));
-    $steps = array();
+<?php
 
-    // Login with existing users.
-    $steps[] = new Step\When('I am logged in as user "'. $username .'"');
-    $steps[] = new Step\When('I visit "node/add/group"');
+/**
+ * @Given /^a group "([^"]*)" with "([^"]*)" access is created with group manager "([^"]*)"$/
+ */
+public function aGroupWithAccessIsCreatedWithGroupManager($title, $access, $username, $domains = NULL, $moderated = FALSE, $organizations = array()) {
+  // Generate URL from title.
+  $url = strtolower(str_replace(' ', '-', trim($title)));
+  $steps = array();
 
-    // Set the title and body fields.
-    $steps[] = new Step\When('I fill in "title" with "' . $title . '"');
-    $steps[] = new Step\When('I fill in "edit-body-und-0-summary" with "This is default summary."');
+  // Login with existing users.
+  $steps[] = new Step\When('I am logged in as user "'. $username .'"');
+  $steps[] = new Step\When('I visit "node/add/group"');
 
-    // ... Do any logic needed.
+  // Set the title and body fields.
+  $steps[] = new Step\When('I fill in "title" with "' . $title . '"');
+  $steps[] = new Step\When('I fill in "edit-body-und-0-summary" with "This is default summary."');
 
-    return $steps;
+  // ... Do any logic needed.
 
-    }
+  return $steps;
+
+  }
 ```
 
 Also, we avoid harcoding any URL, so instead of writing ``When I visit node/1``
@@ -73,29 +75,32 @@ we could write ``When I visit "Public Group 1" of type "group"`` and write some
 code to find the node by the title and redirect us there.
 
 ```php
-  /**
-   * @When /^I visit "([^"]*)" node of type "([^"]*)"$/
-   */
-  public function iVisitNodePageOfType($title, $type) {
-    $query = new entityFieldQuery();
-    $result = $query
-      ->entityCondition('entity_type', 'node')
-      ->entityCondition('bundle', strtolower($type))
-      ->propertyCondition('title', $title)
-      ->propertyCondition('status', NODE_PUBLISHED)
-      ->range(0, 1)
-      ->execute();
-    if (empty($result['node'])) {
-      $params = array(
-        '@title' => $title,
-        '@type' => $type,
-      );
-      throw new Exception(format_string("Node @title of @type not found.", $params));
-    }
-    $nid = key($result['node']);
-    // Use Drupal Context 'I am at'.
-    return new Given("I go to \"node/$nid\"");
+<?php
+
+/**
+ * @When /^I visit "([^"]*)" node of type "([^"]*)"$/
+ */
+public function iVisitNodePageOfType($title, $type) {
+  $query = new entityFieldQuery();
+  $result = $query
+    ->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', strtolower($type))
+    ->propertyCondition('title', $title)
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->range(0, 1)
+    ->execute();
+
+  if (empty($result['node'])) {
+    $params = array(
+      '@title' => $title,
+      '@type' => $type,
+    );
+    throw new Exception(format_string("Node @title of @type not found.", $params));
   }
+  $nid = key($result['node']);
+  // Use Drupal Context 'I am at'.
+  return new Given("I go to \"node/$nid\"");
+}
 ```
 
 Behat allows you to create a __clean interface__ to your system, without having your internal implementation leak out. Just like RESTful is doing, but this time it's done from the testing side instead of the API side.
