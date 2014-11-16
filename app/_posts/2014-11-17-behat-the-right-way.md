@@ -34,4 +34,62 @@ When I go to the homepage
 Then I should have access
 ```
 
+As you see we are avoiding writing scripted tests, and try to describe what should happen -- not the clicks that got us there.
+
+Meta steps are a great way to help you write your step defintion (i.e. each line that is translated to code).
+So for example
+
+```behat
+Given a group "My bad hair day new group 1" with "Public" access is created with group manager "turing"``
+When I visit "My bad hair day new group 1" of type "group"
+```
+
+```php
+  /**
+   * @Given /^a group "([^"]*)" with "([^"]*)" access is created with group manager "([^"]*)"$/
+   */
+  public function aGroupWithAccessIsCreatedWithGroupManager($title, $access, $username, $domains = NULL, $moderated = FALSE, $organizations = array()) {
+    // Generate URL from title.
+    $url = strtolower(str_replace(' ', '-', trim($title)));
+    $steps = array();
+    $steps[] = new Step\When('I am logged in as user "'. $username .'"');
+    $steps[] = new Step\When('I visit "node/add/group"');
+    $steps[] = new Step\When('I fill in "title" with "' . $title . '"');
+    $steps[] = new Step\When('I fill in "edit-c4m-body-und-0-summary" with "This is default summary."');
+    $steps[] = new Step\When('I fill in "edit-purl-value" with "' . $url .'"');
+    $steps[] = new Step\When('I select the radio button "' . $access . '"');
+
+    return $steps;
+
+    }
+```
+
+Would be translated to
+
+```php
+  /**
+   * @When /^I visit "([^"]*)" node of type "([^"]*)"$/
+   */
+  public function iVisitNodePageOfType($title, $type) {
+    $query = new entityFieldQuery();
+    $result = $query
+      ->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', strtolower($type))
+      ->propertyCondition('title', $title)
+      ->propertyCondition('status', NODE_PUBLISHED)
+      ->range(0, 1)
+      ->execute();
+    if (empty($result['node'])) {
+      $params = array(
+        '@title' => $title,
+        '@type' => $type,
+      );
+      throw new Exception(format_string("Node @title of @type not found.", $params));
+    }
+    $nid = key($result['node']);
+    // Use Drupal Context 'I am at'.
+    return new Given("I go to \"node/$nid\"");
+  }
+```
+
 <img src="/assets/images/posts/restful-discovery/image1.jpg" />
