@@ -17,7 +17,7 @@ If you don't have a test on your project, I would argue that your are doing it w
 
 With that said, it's super easy to abuse Behat. We are developers and we are thinking similar to machines (not really, but you get my point). If I would like to test login to my site I could easily do
 
-```behat
+```cucumber
 Given I visit "/user/login"
 # fill the username and password input fields, and click submit
 When I fill "username" with "foo"
@@ -30,7 +30,7 @@ Your test will return green, but it could be improved:
 
 <!-- more -->
 
-```behat
+```cucumber
 Given I login with an "authenticated" user
 When I go to the homepage
 Then I should have access
@@ -40,7 +40,7 @@ As you see we are avoiding writing _scripted_ tests, and try to describe what sh
 
 Meta steps are a great way to help you write your step definition (i.e. each line that is translated to code) with reusable code. So for example
 
-```behat
+```cucumber
 Given a group "Public Group 1" with "Public" access is created with group manager "group1-admin"``
 ```
 
@@ -132,7 +132,7 @@ casper.test.begin('Tests homepage structure', 7, function suite(test) {
 
 But they might be able to appreciate this in Behat
 
-```behat
+```cucumber
 @javascript
 Scenario: Validate an anonymous user can see all links, and a list of articles.
   Given I am an anonymous user
