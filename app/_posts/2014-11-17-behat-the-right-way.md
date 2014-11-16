@@ -20,10 +20,10 @@ With that said, it's super easy to abuse Behat. We are developers and we are thi
 ```cucumber
 Given I visit "/user/login"
 # fill the username and password input fields, and click submit
-When I fill "username" with "foo"
-And I fill "password" with "bar"
-And I press "Login"
-Then I should get a "200" HTTP response
+ When I fill "username" with "foo"
+  And I fill "password" with "bar"
+  And I press "Login"
+ Then I should get a "200" HTTP response
 ```
 
 Your test will return green, but it could be improved:
@@ -32,8 +32,8 @@ Your test will return green, but it could be improved:
 
 ```cucumber
 Given I login with an "authenticated" user
-When I go to the homepage
-Then I should have access
+ When I go to the homepage
+ Then I should have access
 ```
 
 As you see we are avoiding writing _scripted_ tests, and try to describe what should happen -- not the clicks that got us there.
@@ -141,9 +141,9 @@ But they might be able to appreciate this in Behat
 @javascript
 Scenario: Validate an anonymous user can see all links, and a list of articles.
   Given I am an anonymous user
-  When I visit the homepage
-  Then I should see anonymous related links
-  And I should see a teaser of recent articles
+   When I visit the homepage
+   Then I should see anonymous related links
+    And I should see a teaser of recent articles
 ```
 
 Behat's underlying code in the end will be very close to the one in CasperJS - however it better defined _what_ is needed, not only how it should appear.
