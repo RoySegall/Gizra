@@ -92,4 +92,6 @@ Would be translated to
   }
 ```
 
+## Testing JS
+
 <img src="/assets/images/posts/restful-discovery/image1.jpg" />
