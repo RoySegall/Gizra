@@ -1,6 +1,6 @@
 ---
 title: "Behat - The Right Way"
-tags:
+tags: 
   - Headless Drupal
   - Behat
   - "Drupal-planet"
@@ -11,11 +11,11 @@ published: true
 
 {% include setup %}
 
-[Behat](http://docs.behat.org/en/v2.5/) is a wonderful tool for automatic testing. It allows you to write your user stories and scenarios in proper English, which will be recognized by Behat and transformed to a set of clicks or other operations that mimic a real user.
+[Behat](http://docs.behat.org/en/v2.5/) is a wonderful tool for automatic testing. It allows you to write your user stories and scenarios in proper English, which is then parsed by Behat and transformed to a set of clicks or other operations that mimic a real user.
 
-If you don't have a test on your project, I would argue that your are doing it wrong. (See my [The Gizra Way](https://www.getpantheon.com/blog/drupal-development-gizra-way) presentation where I explain why). Even having a _single_ test would be much better than none.
+If you don't have automated tests on your project, I would argue that you're doing it wrong (I explain why on [The Gizra Way](https://www.getpantheon.com/blog/drupal-development-gizra-way) presentation). Even having a _single_ test is much better than none.
 
-With that said, it's super easy to abuse Behat. We are developers and we are thinking similar to machines (not really, but you get my point). If you would like to test login to your site you could easily do
+With that said, it's super easy to abuse Behat. We are developers and we think sort of like machines (not really, but you get my point). If you would like to test login to your site you could easily do
 
 ```cucumber
 Given I visit "/user/login"
@@ -106,14 +106,14 @@ public function iVisitNodePageOfType($title, $type) {
 }
 ```
 
-Behat allows you to create a __clean interface__ to your system, without having your internal implementation leak out. Just like RESTful is doing, but this time it's done from the testing side instead of the API side.
+Behat allows you to create a __clean interface__ to your system, without having your internal implementation leak out. Just like RESTful is doing, but for testing instead of REST API.
 
-## CasperJs Vs Behat
+## CasperJS Vs Behat
 
-Testing of Javascript code requires using PhantomsJs ([here's](Testing of Javascript code is done with PhantomJS) a quick wiki on how to install it).
-@juampy from Lullabot has recommended in his [blog post](https://www.lullabot.com/blog/article/testing-front-end-casperjs) to use CasperJs to test JS. I think Behat would be better for this simple reason:
+Testing of Javascript code requires using PhantomsJS ([here's](Testing of Javascript code is done with PhantomJS) a quick wiki on how to install it).
+@juampy from Lullabot has recommended in his [blog post](https://www.lullabot.com/blog/article/testing-front-end-casperjs) to use CasperJs to test JS. I think Behat could be better for this simple reason:
 
-In Casper the tests are written by developers, and read by developers.
+In CasperJS tests are written by developers, and read by developers.
 In Behat, on the other hand, the tests MAY be read by your client as-well (I won't try to claim a client will write ones, as I don't believe it's the usually the case).
 
 No (typical) client will enjoy reading
@@ -156,6 +156,7 @@ Behat's underlying code in the end will be very close to the one in CasperJS - h
 ## Headless Drupal
 
 As we are working on decoupled backend and frontend, we still want to have our code properly tested.
-A nice technique we've been using is installing the backend (Drupal) and frontend (Angular webapp) on the same Travis instance and running Behat tests on the frontend. By having the backend present we don't need to mock any data just for the frontend, as we already have some dummy migrated data as part of every installation profile.
 
-For the brave, see our [.travis](https://github.com/Gizra/negawatt-server/blob/master/.travis.yml) configuration that runs both API and Javascript tests on our fully decoupled app. Note that the linked project is no where to be considered ready, but it can still be valuable to people who want to see how we got Travis to run our tests.
+A nice technique we've been using is installing the backend (Drupal) and frontend (AngularJS webapp) on the same Travis instance and running Behat tests on the frontend. By having the backend present we don't need to mock any data just for the frontend, as we already have some dummy migrated data as part of every installation profile.
+
+For the brave, see our [.travis](https://github.com/Gizra/negawatt-server/blob/master/.travis.yml) configuration that runs both API and Javascript tests on our fully decoupled app. Note that the linked project is nowhere near ready, but it can still be valuable if you want to see how we got Travis to run our tests.
