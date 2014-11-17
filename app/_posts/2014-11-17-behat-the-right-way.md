@@ -110,6 +110,7 @@ Behat allows you to create a __clean interface__ to your system, without having 
 
 ## CasperJs Vs Behat
 
+Testing of Javascript code requires using PhantomsJs ([here's](Testing of Javascript code is done with PhantomJS) a quick wiki on how to install it).
 @juampy from Lullabot has recommended in his [blog post](https://www.lullabot.com/blog/article/testing-front-end-casperjs) to use CasperJs to test JS. I think Behat would be better for this simple reason:
 
 In Casper the tests are written by developers, and read by developers.
