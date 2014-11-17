@@ -1,6 +1,6 @@
 ---
 title: "Behat - The Right Way"
-tags: 
+tags:
   - Headless Drupal
   - Behat
   - "Drupal-planet"
@@ -108,15 +108,17 @@ public function iVisitNodePageOfType($title, $type) {
 
 Behat allows you to create a __clean interface__ to your system, without having your internal implementation leak out. Just like RESTful is doing, but for testing instead of REST API.
 
+## Headless Drupal
+
+As we are working on decoupled backend and frontend, we still want to have our code properly tested.
+
+A nice technique we've been using is installing the backend (Drupal) and frontend (AngularJS webapp) on the same Travis instance and running Behat tests on the frontend. By having the backend present we don't need to mock any data just for the frontend, as we already have some dummy migrated data as part of every installation profile. We use PhantomsJS ([here's](Testing of Javascript code is done with PhantomJS) a quick wiki on how to install it) along with Behat to test the frontend.
+
+For the brave, see our [.travis](https://github.com/Gizra/negawatt-server/blob/master/.travis.yml) configuration that runs both API and Javascript tests on our fully decoupled app. Note that the linked project is nowhere near ready, but it can still be valuable if you want to see how we got Travis to run our tests.
+
 ## CasperJS Vs Behat
 
-Testing of Javascript code requires using PhantomsJS ([here's](Testing of Javascript code is done with PhantomJS) a quick wiki on how to install it).
-@juampy from Lullabot has recommended in his [blog post](https://www.lullabot.com/blog/article/testing-front-end-casperjs) to use CasperJs to test JS. I think Behat could be better for this simple reason:
-
-In CasperJS tests are written by developers, and read by developers.
-In Behat, on the other hand, the tests MAY be read by your client as-well (I won't try to claim a client will write ones, as I don't believe it's the usually the case).
-
-No (typical) client will enjoy reading
+@juampy from Lullabot has recommended in his [blog post](https://www.lullabot.com/blog/article/testing-front-end-casperjs) to use CasperJs to test JS. I think I believe Behat could be better simply because it's easier to read. For example take this CasperJs code:
 
 ```javascript
 casper.test.begin('Tests homepage structure', 7, function suite(test) {
@@ -139,24 +141,15 @@ casper.test.begin('Tests homepage structure', 7, function suite(test) {
 });
 ```
 
-But they might be able to appreciate this in Behat
+... and imagine how it could have been translated to Behat:
 
 ```cucumber
 @javascript
 Scenario: Validate an anonymous user can see all links, and a list of articles.
   Given I am an anonymous user
    When I visit the homepage
-   Then I should see anonymous related links
-    And I should see a teaser of recent articles
+   Then I should see the main menu links for "anonymous" user are present
+    And I should see a teaser with "10" items of recent articles
 ```
 
-Behat's underlying code in the end will be very close to the one in CasperJS - however it better defined _what_ is needed, not only how it should appear.
-
-
-## Headless Drupal
-
-As we are working on decoupled backend and frontend, we still want to have our code properly tested.
-
-A nice technique we've been using is installing the backend (Drupal) and frontend (AngularJS webapp) on the same Travis instance and running Behat tests on the frontend. By having the backend present we don't need to mock any data just for the frontend, as we already have some dummy migrated data as part of every installation profile.
-
-For the brave, see our [.travis](https://github.com/Gizra/negawatt-server/blob/master/.travis.yml) configuration that runs both API and Javascript tests on our fully decoupled app. Note that the linked project is nowhere near ready, but it can still be valuable if you want to see how we got Travis to run our tests.
+The underlying code in the end will be very close to the one in CasperJS - however it better defined _what_ is needed, not only how it should appear, and arguably it's more readable by other developers.
