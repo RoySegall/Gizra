@@ -1,4 +1,5 @@
 ---
+permalink: "/content/tipali-a-tool-for-easily-finding-polio-vaccination-clinics"
 layout: post
 title: Tipa.li – a Tool for Easily Finding Polio Vaccination Clinics
 author: niryariv

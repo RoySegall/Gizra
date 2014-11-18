@@ -36,7 +36,7 @@ class OldCarsMigration extends Migration {
 ?>
 ```
 
-Now we ll set the cars table primary key,  see <a href=”/content/data-migration-part-1”>Migrate Part 1 for more information </a>:
+Now we ll set the cars table primary key, see <a href="/content/data-migration-part-1">Migrate Part 1 for more information </a>:
 
 ```php
 <?php
@@ -50,6 +50,7 @@ $this->map = new MigrateSQLMap($this->machineName,
 );
 ?>
 ```
+
 Here we set the query to get the source object:
 
 ```php
@@ -157,15 +158,18 @@ $row argument represent the source object returned by your query, it can be used
 
 ```php
 <?php
-  public function prepare(stdClass $account, stdClass $row) {
-    $account->field_car_model[0]['value'] =  strtolower($account->field_car_model[0]['value']) ;
-  }
+
+public function prepare(stdClass $account, stdClass $row) {
+  $account->field_car_model[0]['value'] =  strtolower($account->field_car_model[0]['value']) ;
+}
 ?>
 ```
 
 Here is an other example where I used the $row argument to modify the node.
+
 ```php
 <?php
-  $account->field_car_model[0]['value'] = strtolower($row->field_car_model) ;
+
+$account->field_car_model[0]['value'] = strtolower($row->field_car_model) ;
 ?>
 ```

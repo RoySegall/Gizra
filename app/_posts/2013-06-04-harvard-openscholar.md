@@ -2,8 +2,9 @@
 layout: post
 title: "Harvard's OpenScholar"
 description: ""
-category: 
+category:
 tags: [Biblio, OG7, Drupal-planet]
+permalink: "/content/harvard-openscholar/"
 ---
 
 When people ask you about big projects done with Drupal, what's the _second_ item on your list? I know the first one is [WhiteHouse.gov](http://www.whitehouse.gov/) - that's not Drupal's foot in the door, it's the foot that broke the door.
@@ -61,4 +62,3 @@ So, the same entity "knows" how to render _itself_ using different styles. This 
 Since so many universities and libraries are using this module, I'd like to encourage the community to join in. Enable the Biblio example module, and see it in action. We're also working on Migrate from the 1.x branch to the new branch - as I wrote above, we are not just dealing with theory, we need to make it work!
 
 There a tons of other features in OpenScholar, I'll let you dig in yourself. Perhaps by now the question I started this post with will change to "What's the _third_ big project you tell to your clients?"
-
