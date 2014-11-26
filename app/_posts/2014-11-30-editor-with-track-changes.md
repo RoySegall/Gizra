@@ -34,11 +34,9 @@ So this is how we implemented it with ``CKEditor`` and ``AngularJs``:
 
 1- Bower install the libraries of [ng-ckeditor](https://github.com/esvit/ng-ckeditor) and [ckeditor-lite](https://github.com/loopindex/ckeditor-track-changes) (Based on ICE.)
 
-```json
-"dependencies": {
-  "ng-ckeditor": "latest",
-  "lite": "http://download.ckeditor.com/lite/releases/lite_1.1.25.zip"
-}
+```
+  bower install ng-ckeditor#latest --save
+  bower install lite http://download.ckeditor.com/lite/releases/lite_1.1.25.zip --save
 ```
 2- We have to move the ``lite`` to the plugins directory inside ``CKEditor``.
 Preferably do it in your install profile, If you don't have an install profile, Just move it manually.
