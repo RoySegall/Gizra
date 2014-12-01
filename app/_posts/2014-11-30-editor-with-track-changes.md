@@ -11,28 +11,20 @@ author: NaderSafadi
 ---
 {% include setup %}
 
-It's really powerful for any one to be able to track changes, who made them and when they made them, Doing this with every article you have, every entity, every field, 
-could be quite awesome, So how do we do this, Well we have one option when using Drupal, Which is this module [ckeditor_lite](https://www.drupal.org/project/ckeditor_lite)
- and every library and dependency module you have to install there.
- 
+For a recent project, we needed the ability to track text changes by multiple authors. 
+The NY Times released the excellent [ICE](https://github.com/NYTimes/ice) just for this,
+And then LoopIndex released [ckeditor-lite](https://github.com/loopindex/ckeditor-track-changes) based on ``ICE`` as a ``CKEditor`` Plugin.
+
+So now you can have a powerful editor with changes tracker ability, Here's to implement all of this to your AngularJs app.
+
 <!-- more -->
 
 <div class="thumbnail">
   <img src="{{BASE_PATH}}/assets/images/posts/editor-with-track-changes/track-changes.gif">
-  <div class="caption">Notice the responsiveness of the site. The part with the white background marks our custom breakpoint.</div>
+  <div class="caption">CKEditor with changes tracker, Each user will get a different color.</div>
 </div>
 
-
-What if you are using angularJs, Well you have no options, so you have to put something together.
-The basis of our work was with [ICE.js](https://github.com/NYTimes/ice), We loved it and it's really cool, It was a bit hard to implement it with AngularJs
-But somehow we did it and it worked fine, the only problem is, It's not a text editor, not really, It's just a textarea.
-We need tools, we need to make headings and lists and tables.
-
-It's worth mentioning that ``ICE`` out of the box can be a plugin to ``Tinymce``.
-
-So this is how we implemented it with ``CKEditor`` and ``AngularJs``:
-
-1- Bower install the libraries of [ng-ckeditor](https://github.com/esvit/ng-ckeditor) and [ckeditor-lite](https://github.com/loopindex/ckeditor-track-changes) (Based on ICE.)
+1- Bower install the libraries of [ng-ckeditor](https://github.com/esvit/ng-ckeditor) and [ckeditor-lite](https://github.com/loopindex/ckeditor-track-changes) (Based on ICE).
 
 ```
   bower install ng-ckeditor#latest --save
