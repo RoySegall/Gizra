@@ -24,6 +24,8 @@ So now you can have a powerful editor with changes tracker ability, Here's to im
   <div class="caption">CKEditor with changes tracker, Each user will get a different color.</div>
 </div>
 
+We have made an example repository [Track Editor](https://github.com/nader77/track-editor), So you can have a look at the code and try it for your self.
+
 1- Bower install the libraries of [ng-ckeditor](https://github.com/esvit/ng-ckeditor) and [ckeditor-lite](https://github.com/loopindex/ckeditor-track-changes) (Based on ICE).
 
 ```
