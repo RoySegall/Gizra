@@ -8,13 +8,9 @@ layout: post
 published: true
 ---
 
-We use [Bower](http://bower.io/) package manager to manage the dependencies in our javascript applications.  If we want add a library we need only run ``bower install [package-name]`` and Bower will add it, in the version compatible with other libraries of the project.
+We use the [Bower](http://bower.io/) package manager to manage dependencies in our JavaScript code.  If we want to add a library we need only run ``bower install [package-name]`` and Bower will add it, in the version compatible with the other libraries on the project. If the library has a new version we can update it and its dependencies using ``bower update``.
 
-If the library has a new version we can update it and its dependencies using ``bower update``.
-
-This is wonderful and a great time saver, but when developing locally a new component we can't ``bower install`` and ``bower update`` for every line change.
-
-To help us with that we have ``bower link [package-name]``
+This is wonderful and a great time saver, but when developing locally a new component we can't ``bower install`` and ``bower update`` for every line change. To help us with that we have ``bower link [package-name]``.
 
 <!-- more -->
 
@@ -22,13 +18,13 @@ To help us with that we have ``bower link [package-name]``
 
 ``bower link`` creates a symbolic link of the component into the bower's share folder, which we can use in our project by running `bower link [package-name]`
 
-__Preparation__
+__Setting Up__
 
-Check that both your library and you package in development are registered as bower packages - by having a valid [bower.json](http://bower.io/docs/creating-packages/) file.
+First, you need to check that both your library and package in development are registered as bower packages - by having a valid [bower.json](http://bower.io/docs/creating-packages/) file.
 
 We assume you have Yeoman's [Angular generator](http://yeoman.io/learning/) installed.
 
-1. Scaffold a new app.
+1. Scaffold a new app:
 
 ```bash
 # Create new application folder.
@@ -40,7 +36,7 @@ yo angular
 ```
 
 
-2. Create a component folder.
+2. Create a component folder:
 
 ```bash
 mkdir myComponent
@@ -54,7 +50,7 @@ cd myComponent
 
 ![]({{BASE_PATH}}/assets/images/posts/bower-link/bower-create-link.png)
 
-5. Access the project folder where you want to use the component. and link the dependency.
+5. Access the project folder where you want to use the component. and link the dependency:
 
 ```bash
 # Go back to the root of the Application.
@@ -62,18 +58,18 @@ cd ..
 bower link myComponent
 ```
 
-This creates a symbolic link between the components that's under /myComponents and the one that's "installed" for the main application in ``/bower_components/myComponents``.
+This creates a symbolic link between the components under /myComponents and the ones "installed" for the main application in ``/bower_components/myComponents``.
 
 ![]({{BASE_PATH}}/assets/images/posts/bower-link/bower-use-link.png)
 
-6. Now whenever you will ``grunt build`` your component it will auto-sync with your application.
+6. Now, whenever you run ``grunt build`` your component it will auto-sync with your application.
 
 ![]({{BASE_PATH}}/assets/images/posts/bower-link/symbolic-link.png)
 
 
 ## Use Bower in Drupal distributions
 
-In our Drupal's projects in Gizra, which now almost always have an AngularJS  component, we can install the client application and dependencies with a bash script file.
+Nowadays our Drupal projects in Gizra almost always have an AngularJS  component. We can install the client application and dependencies with a bash script file.
 
 In the root of the project, we need to define the path we want to use for the library files, in the Bower configuration file ``.bowerrc``:
 
