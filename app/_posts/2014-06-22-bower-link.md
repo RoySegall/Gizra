@@ -12,7 +12,7 @@ We use [Bower](http://bower.io/) package manager to manage the dependencies in o
 
 If the library has a new version we can update it and its dependencies using ``bower update``.
 
-This is wonderful and a great time saver, but when developing locally a new component we can ``brew install`` and ``brew update`` for every line change.
+This is wonderful and a great time saver, but when developing locally a new component we can't ``bower install`` and ``bower update`` for every line change.
 
 To help us with that we have ``bower link [package-name]``
 
