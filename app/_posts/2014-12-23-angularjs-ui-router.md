@@ -12,7 +12,7 @@ author: YaronMiro
 
 The [UI-Router](http://angular-ui.github.io/) is a routing framework for AngularJS. Ui-Router takes a whole new different approach then the traditional ```NgRoute``` which is only based upon route URL. UI-Router extends the routing by using ```States```.
 This mean that the application will be capable of changing it's own views by the ```states``` and not just by the route URL.
-You can check this [live demo](#) app and also access the example project [repository](https://github.com/YaronMiro/AngularJs-UI-Router---Example)
+You can check this [live demo](http://yaronmiro.github.io/AngularJs-UI-Router---Example) app and also access the example project [repository](https://github.com/YaronMiro/AngularJs-UI-Router---Example)
 
 <!-- more -->
 
