@@ -10,7 +10,7 @@ published: true
 
 We use the [Bower](http://bower.io/) package manager to manage dependencies in our JavaScript code.  If we want to add a library we need only run ``bower install [package-name]`` and Bower will add it, in the version compatible with the other libraries on the project. If the library has a new version we can update it and its dependencies using ``bower update``.
 
-This is wonderful and a great time saver, but when developing locally a new component we can't ``bower install`` and ``bower update`` for every line change. To help us with that we have ``bower link [package-name]``.
+This is awesome and a great time saver, but when developing locally a new component we can't ``bower install`` and ``bower update`` for every line change. To help us with that we have ``bower link [package-name]``.
 
 <!-- more -->
 
