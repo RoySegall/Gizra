@@ -11,11 +11,15 @@ published: true
 ---
 
 {% include setup %}
-The first time i heard about Behat was at DrupalCon Munich 2012. Since then the usage of Behat has grown exponential and the tools it can be integrate with has grown as well - we can test the markup of a page. Pretty amazing, no? Well, It’s time to take it a little bit higher but in another direction. But first, let’s see how it’s actually works.
+The first time i heard about Behat was at DrupalCon Munich 2012. Since then the 
+usage of Behat has grown exponential and the tools it can be integrate with has 
+grown as well - we can test the markup of a page. Pretty amazing, no? Well, It’s
+ time to take it a little bit higher but in another direction. But first, let’s 
+ see how it’s actually works.
 
 Behat built from several symfony components:
 
-  - Cucumber steps - AKA feature files(*.feature). Contains the scenarios.
+  - Cucumber steps - AKA feature files(`*.feature`). Contains the scenarios.
   - Scenario - Collection of steps written in plain english, or any other 
     language, combining together a test.
   - Step definition - A method with PHP code. Behat will found the matching 
@@ -28,6 +32,11 @@ Behat built from several symfony components:
 The basic idea is that the feature files are teared down to small sentence, 
 Behat looks for method with matching annotation and invoke it. Mink give us the 
 browser functionality such as forms, DOM validation and more.
+
+<div class="thumbnail">
+  <img src="{{BASE_PATH}}/assets/images/posts/behat-drupal8/test_results.png">
+  <div class="caption">Tests results from Behat tests in Drupal</div>
+</div>
 
 <!-- more -->
 
