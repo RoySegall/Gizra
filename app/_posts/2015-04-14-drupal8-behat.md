@@ -81,7 +81,7 @@ Inside the class you’ll implement a method called Step and look like this:
     // Logic implementation.
   }
 ```
-Each place holder, (.*?), will be passed as additional argument. The $Behat 
+Each place holder, `(.*?)`, will be passed as additional argument. The $Behat 
 object is an instance of BehatTestsAbstract which allow us to invoke the methods 
 of the simpletest class.
 
