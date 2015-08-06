@@ -9,22 +9,21 @@ layout: post
 published: true
 author: RoySegall
 ---
-We star to understand that going fully decouple can painful. Very panful. All
-the good things we have are now gone. Disapper. Vanished into the void where no
-bits can be send. Maybe i’m a little bit extreme since it’s still exists but in
-the Drupal context.
+We've started to understand that going fully decouple can be painful. Very painful.
+All the good things we have are now gone. Disappear. Vanished into the void where
+no bits can be sent. Maybe i’m a little bit extreme since it’s still exists in
+the backend Drupal.
 
-One of the things, which might sound very small, is the functionallity of the
-flag module. On of the many useages of the flag module is a providing a like
-button. Just like on Facebook. But how can we do it with a decouple site?
-Let’s see!
+One of the things, which might sound very small, is the functionality of the
+flag module. One of the many usages the flag module provides is the like button.
+Just like on Facebook. But how can we do it with a decouple site? Let’s see!
 
 <!-- more -->
 ## Setting up the infrastructure
 
-You’ll need to patch flag with the patch from [this](https://www.drupal.org/node/2461515)
-issue. This will provide
-support for flag and entity metadata wrapper which eventually support Restful.
+First, you’ll need to patch flag with [this patch](https://www.drupal.org/node/2461515).
+This will provide the support between entity metadata wrapper, Flag and
+eventually Restful.
 
 The other thing we need to do is to set up the end point.
 
@@ -169,8 +168,9 @@ class DrupalHubFlagLike extends \RestfulEntityBase {
 ```
 
 ##The angular directive
-After you got the backend fire up, let’s set up the front end.
-If you using bower just type:
+After the backend is set up, let’s set up the front end.
+
+Getting the directive using bower is very easy:
 
 ```js
 	bower install drupal-restful-flag --save
@@ -179,11 +179,13 @@ If you using bower just type:
 If not, go the github [project page](https://github.com/DrupalHub/flag-directive)
 and clone it. On the way you can see how to set it up.
 
-Adding it to your application will be more easy:
+Adding the directive won't take a lot of effort:
 
 ```html
 	<span flag type="like" likes="20" entity="node" id="1"></span>
 ```
-When likes is the current likes number, entity is the entity type and the id is the identifier.
+When likes is the current likes number, entity is the entity type and the id is
+the identifier for the entity the user currently watching - Node, Comment... Any
+thing the flag is attached to.
 
 That’s it.
