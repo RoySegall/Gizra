@@ -173,7 +173,7 @@ After the backend is set up, let’s set up the front end.
 Getting the directive using bower is very easy:
 
 ```js
-	bower install drupal-restful-flag --save
+bower install drupal-restful-flag --save
 ```
 
 If not, go the github [project page](https://github.com/DrupalHub/flag-directive)
@@ -182,7 +182,7 @@ and clone it. On the way you can see how to set it up.
 Adding the directive won't take a lot of effort:
 
 ```html
-	<span flag type="like" likes="20" entity="node" id="1"></span>
+<span flag type="like" likes="20" entity="node" id="1"></span>
 ```
 When likes is the current likes number, entity is the entity type and the id is
 the identifier for the entity the user currently watching - Node, Comment... Any
