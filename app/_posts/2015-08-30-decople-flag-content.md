@@ -14,9 +14,9 @@ All the good things we have are now gone. Disappear. Vanished into the void wher
 no bits can be sent. Maybe i’m a little bit extreme since it’s still exists in
 the backend Drupal.
 
-One of the things, which might sound very small, is the functionality of the
-flag module. One of the many usages the flag module provides is the like button.
-Just like on Facebook. But how can we do it with a decouple site? Let’s see!
+One of the things, which might sound very minor, it's the functionality of the
+flag module. One of the many usages the flag module have it's the like button.
+Just like on Facebook. But how can we achieve it with a decouple site? Let’s see!
 
 <!-- more -->
 ## Setting up the infrastructure
