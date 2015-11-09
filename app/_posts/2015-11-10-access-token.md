@@ -11,14 +11,22 @@ author: RoySegall
 
 {% include setup %}
 
-When handling traditional site we don’t need to handle authentication - Drupal got our back for that one. We know the process - a user logging in, get’s a cookie and start using your awesome site. But what about decoupled sites? How can we authenticate the user?
+When talking on traditional Drupal site we don’t need to handle authentication -
+Drupal got our back. We know the process - a user submit the login form, get’s a
+cookie and start using your awesome site. But what about decoupled sites? How
+can we authenticate the user?
 
-Before diving into that part we need to understand there are two types of authentication(there are actually 3 authentication plugins but in fact we have 2 authentication methods by default):
+Before diving into that part we need to understand the authentication types
+provided by restful:
 
-  1. CSRF token - The CSRF token is used when we need to make that the cookie wasn’t stolen.
-  2. Access token - Restful will generate an access token and will bind it to the user. Each request we will make against restful will hold the access token in the header.
+  1. CSRF token - CSRF token used to make sure a cookie was not stolen by XSS
+  hacking.
+  2. Access token - Restful will generate an access token and bind it to the
+  user.
 
-Another important thing: In order to use access token authentication you’ll need to enable the module `restful_token_auth`.
+The tokens will be passed in the request header. Another important thing: In
+order to use access token authentication you’ll need to enable the module
+`restful_token_auth`.
 
 <!-- more -->
 
