@@ -11,19 +11,19 @@ published: true
 
 {% include setup %}
 
-Have you ever heard on the Burning man project? No? Three months earlier neither
-am I. I can describe it in one simple sentence: a lot of Hippies settle down in
+Have you ever heard of the Burning man project? No? Three months earlier neither
+did I. I can describe it in one simple sentence: Lots of Hippies settle down in
 the desert for couple of weeks and set up small camps as part of a big city when
 each camp have it’s own theme.
 
-And here I am going to the hackathon of the local Burning man community as an
-enthusiastic Drupal developer willing to solve any Drupal issue. My part was to
-write the backend part. The obvious choice was the Restful module. But then I
-came across a big problem: How can I manage 3rd party applications and make sure
-they can’t access resources which they should’nt access? How can I prevent from
-the secret santa application(the app will provide addresses of other Burning man
-attendees so they could receive gifts) to access the user’s medical qualification
-field?
+And here I find myself going to the hackathon of the local Burning man community
+as an enthusiastic Drupal developer willing to solve any Drupal issue. My part
+was to write the backend. The obvious choice was using Restful module. But then
+I came across a big problem: How can I manage 3rd party applications and make
+sure they can’t access resources which they shouldn't access? How can I prevent
+from the secret santa application(the app will provide addresses of other
+Burning man attendees so they could receive gifts) to access the user’s medical
+qualification field?
 
 <!-- more -->
 
