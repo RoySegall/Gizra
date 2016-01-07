@@ -21,12 +21,12 @@ as an enthusiastic Drupal developer willing to solve any Drupal issue (and you c
 
 Then I came across a big problem: How can we manage 3rd party applications and make
 sure they can't access resources which they shouldn't have access to?
-How can we prevent from the Secret Santa application (and app that provides addresses of other
+How can we prevent from the Secret Santa application (an app that provides addresses of other
 Burning Man attendees so they could receive gifts) to access the user's medical
 qualification data?
 
 <div class="thumbnail">
-  <img src="{{BASE_PATH}}/assets/images/posts/apps-entity-restrictions/aer.gif">
+    <iframe src="http://gfycat.com/ifr/FragrantUnequaledHerculesbeetle" frameborder="0" scrolling="no" width="800" height="600" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe>
   <div class="caption">Creating apps and restrictions is very easy.</div>
 </div>
 
@@ -34,7 +34,7 @@ qualification data?
 
 <!-- more -->
 
-With this module suite you can module create 3rd party application representation where you can decide which field or property each
+With this module suite you can create 3rd party application representation where you can decide which field or property each
 registered application can access on each entity. You can even restrict the allowed CRUD operations.
 
 While working on Gizra's modules and projects in the past years I came to realize that a good API and a good DX is the one thing responsible for a good module. By default, any app is restricted from doing any operation - you know, security.
@@ -72,3 +72,8 @@ for developers to get this restriction validation on their endpoint. If you are 
 The next step is baking more statistics in. Wouldn't it be great if you could know the usages for each
 application? Knowing the amount of requests, failed and passed, is a great tool
 and could detect tryings for hijacking information from un-authorized source.
+
+<div class="thumbnail">
+  <img src="{{BASE_PATH}}/assets/images/posts/apps-entity-restrictions/report.png">
+  <div class="caption">Graphs can be cool two.</div>
+</div>
