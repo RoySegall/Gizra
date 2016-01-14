@@ -39,6 +39,8 @@ qualification data?
 
 [Apps Entity Restrictions](https://github.com/RoySegall/apps_entity_restrictions) is the answer.
 
+<!-- more -->
+
 With this module suite you can create 3rd party application representation where you can decide which field or property each
 registered application can access on each entity. You can even restrict the allowed CRUD operations.
 
