@@ -16,6 +16,11 @@ each camp has its own theme.
 
 It's not for me.
 
+<div class="thumbnail">
+  <img src="{{BASE_PATH}}/assets/images/posts/apps-entity-restrictions/burner.jpg">
+  <div class="caption">Radical Self-expression is one of Midburn 10 principles. Copy rights reserved to Eyal levkovich</div>
+</div>
+
 And yet, I found myself going to the hackathon of the local Burning man community
 as an enthusiastic Drupal developer willing to solve any Drupal issue (and you can assume they had a few). My part was to write the backend, and the obvious choice was using Restful module.
 
@@ -25,14 +30,14 @@ How can we prevent from the Secret Santa application (an app that provides addre
 Burning Man attendees so they could receive gifts) to access the user's medical
 qualification data?
 
+<!-- more -->
+
 <div class="thumbnail">
     <iframe src="http://gfycat.com/ifr/FragrantUnequaledHerculesbeetle" frameborder="0" scrolling="no" width="800" height="600" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe>
   <div class="caption">Creating apps and restrictions is very easy.</div>
 </div>
 
 [Apps Entity Restrictions](https://github.com/RoySegall/apps_entity_restrictions) is the answer.
-
-<!-- more -->
 
 With this module suite you can create 3rd party application representation where you can decide which field or property each
 registered application can access on each entity. You can even restrict the allowed CRUD operations.
